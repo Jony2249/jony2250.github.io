@@ -1,0 +1,196 @@
+<html>
+<head>
+    <body>
+        <section>
+            <h1>I don't know...</h1>
+        </section>
+    </body>
+    </html>
+<style>
+body{
+   background:lightblue;
+}
+.face{
+   position:absolute;
+   top:0;
+   left:0;
+   right:0;
+   bottom:150;
+   margin:auto;
+   height:50;
+   width:65;
+   background:black;	
+   border-top-left-radius:20px;
+   border-top-right-radius:20px;
+   border-bottom-left-radius:10px;
+   border-bottom-right-radius:10px;
+}
+.head{
+   position:absolute;
+   top:0;
+   left:0;
+   right:0;
+   bottom:150;
+   margin:auto;
+   height:75;
+   width:100;
+   z-index:-1;
+   background:white;	
+   border-top-left-radius:60px;
+   border-top-right-radius:60px;
+   border-bottom-left-radius:60px;
+   border-bottom-right-radius:60px;
+}
+.body{
+   position:absolute;
+   top:60;
+   left:0;
+   right:0;
+   bottom:0;
+   margin:auto;
+   height:120;
+   width:115;
+   background:white;	
+}
+
+.left-hand{
+   position:absolute;
+   top: 50;
+   left:-165;
+   right:0;
+   bottom:0;
+   margin:auto;
+   height:30;
+   width:100;
+   background:white;	
+   border-top-left-radius:50px;
+   border-top-right-radius:10px;
+   border-bottom-left-radius:50px;
+   border-bottom-right-radius:10px;
+   transform: rotateZ(-90deg);
+}
+.right-hand{
+   position:absolute;
+   top:50;
+   left:165;
+   right:0;
+   bottom:0;
+   margin:auto;
+   height:30;
+   width:100;
+   background:white;	
+   border-top-left-radius:10px;
+   border-top-right-radius:50px;
+   border-bottom-left-radius:10px;
+   border-bottom-right-radius:50px;
+   transform: rotateZ(90deg)
+}
+
+
+
+@keyframes hand{
+0%{
+transform:translateY(0px) rotateZ(0deg);
+} 
+50%{
+transform:translateY(-100px) rotateZ(-90deg);
+}
+100%{
+transform:translateY(0px) rotateZ(0deg);
+}
+}
+
+@keyframes otherhand{
+0%{
+transform:translateY(0px) rotateZ(0deg);
+} 
+50%{
+   transform:translateY(-100px) rotateZ(90deg);
+}
+100%{
+transform:translateY(0px) rotateZ(0deg);
+}
+
+}
+
+input[type="checkbox"]{
+  display:none;
+}
+.switch{
+  position:absolute;
+  top:50;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+  height:25px;
+  width:25px;
+  z-index:1;
+  border-radius:50%;
+  background:red;
+  transition:.3s;
+  cursor:pointer;
+} 
+
+#switch-button:checked ~ label .switch{
+  background:red;
+  box-shadow:0px 0px 15px red;
+}
+
+
+#switch-button:checked ~ .left-hand{
+   position:absolute;
+   top: 50;
+   left:-205;
+   right:0;
+   bottom:0;
+   margin:auto;
+   height:30;
+   width:100;
+   background:white;	
+   border-top-left-radius:50px;
+   border-top-right-radius:10px;
+   border-bottom-left-radius:50px;
+   border-bottom-right-radius:10px;
+   transform: rotateZ(-90deg);
+   animation:hand 5s linear infinite;
+}
+
+#switch-button:checked ~ .right-hand{
+   position:absolute;
+   top:50;
+   left:200;
+   right:0;
+   bottom:0;
+   margin:auto;
+   height:30;
+   width:100;
+   background:white;	
+   border-top-left-radius:10px;
+   border-top-right-radius:10px;
+   border-bottom-left-radius:10px;
+   border-bottom-right-radius:50px;
+   transform: rotateZ(90deg);
+   animation:otherhand 5s linear infinite;
+}
+
+
+
+</style>
+</head>
+<body>
+    <input type="checkbox" id="switch-button">
+    <label for="switch-button">
+    <div class="switch">
+</div>
+</label>
+
+<div class="face"></div>
+<div class="head"></div>
+<div class="body"></div>
+<div class="left-hand"></div>
+<div class="right-hand"></div>
+
+</body>
+</html>
+
